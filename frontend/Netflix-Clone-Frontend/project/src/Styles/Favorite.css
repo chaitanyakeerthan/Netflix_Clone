@@ -1,0 +1,162 @@
+
+body {
+  margin: 0;
+  background-color: #141414;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.page-container,
+.favorites {
+  padding: 20px 40px;
+}
+
+.category-Buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.category-Buttons button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-Buttons button:hover {
+  background-color: #e50914;
+}
+
+
+.Home-content,
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+
+.movie {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie:hover {
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+
+.movie img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+}
+
+
+.movie h3 {
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.favorite-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #e50914;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.movie:hover .favorite-button {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+.remove-favorite {
+  width: calc(100% - 16px);
+  margin: 8px;
+  padding: 8px 0;
+  background-color: #e50914;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+
+.movie:hover .remove-favorite {
+  opacity: 1;
+}
+
+
+.remove-favorite:hover {
+  background-color: #f6121d;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.pagination button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .page-container,
+  .favorites {
+    padding: 15px;
+  }
+
+  .movie:hover {
+    transform: scale(1.05);
+  }
+}
+

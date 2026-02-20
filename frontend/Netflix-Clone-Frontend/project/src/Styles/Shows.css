@@ -1,0 +1,102 @@
+
+.show-container {
+  padding: 90px 40px 40px; 
+  background-color: #141414;
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.show-container h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+
+.show-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+
+.show {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.show:hover {
+  transform: scale(1.12);
+  z-index: 10;
+}
+
+
+.show_img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+}
+
+.show h3 {
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+  color: #e5e5e5;
+}
+
+
+.favorite-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  border: none;
+  border-radius: 50%;
+  padding: 6px 8px;
+  font-size: 16px;
+  color: #e50914;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.show:hover .favorite-button {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination button {
+  background-color: #e50914;
+  border: none;
+  color: #ffffff;
+  padding: 8px 18px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .show-container {
+    padding: 80px 20px;
+  }
+
+  .show:hover {
+    transform: scale(1.05);
+  }
+}
